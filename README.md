@@ -6,7 +6,7 @@
 <br><br>
 <pre>
 app										框架核心部分
-<br>
+
 	controller						控制器
 <br>
 		IndexController.php  Index 默认控制器
