@@ -1,7 +1,7 @@
 <?php
 $conf = array(
 // index.php的绝对路径
-'absolute_address' => "/webdata/web/",
+'absolute_address' => "/webdata/test/",
 
 //库名
 'db_name' => 'xxx',

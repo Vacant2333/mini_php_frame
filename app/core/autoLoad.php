@@ -26,28 +26,33 @@ class Psr4AutoLoad
         $this->mapLoad($namespace, $realClass);
     }
 
-    protected function mapLoad($namespace, $realClass)
+    function mapLoad($namespace, $realClass)
     {
         //判断是否映射过
-        if (array_key_exists($namespace, $this->maps)) {
+        if(array_key_exists($namespace, $this->maps))
             $namespace = $this->maps[$namespace];
-        }
+		
         //处理路径
         $namespace = rtrim(str_replace('\\/', '/', $namespace), '/') . '/';
         //拼接文件全路径
         $filePath = $namespace . $realClass . '.php';
-        if (file_exists($filePath)) {
+		
+        if(file_exists($filePath) && !class_exists($realClass))
+		{
             include $filePath;
-        } else {
-            echo $filePath;
-            die('文件不存在');
+        }
+		else
+		{
+            //echo $filePath;
+            //die('文件不存在');
         }
     }
 
     //命名空间 路径  将命名空间和路径保存到映射数组中
     function addMaps($namespace, $path)
     {
-        if (array_key_exists($namespace, $this->maps)) {
+        if(array_key_exists($namespace, $this->maps))
+		{
             die('此命名空间已经映射');
         }
         //将命名空间和路径以键值对形式存放到数组中

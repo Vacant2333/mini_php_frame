@@ -1,9 +1,5 @@
 <?php
-/*
-过滤GET POST参数中数据
-*/
-
-function f($str) 
+function filter($str) 
 {
 	$html_string=array("&amp;", "&nbsp;", "'", '"', "<", ">", "\t", "\r");
     $html_clear=array("&", " ", "&#39;", "&quot;", "&lt;", "&gt;", "&nbsp; &nbsp; ", "");
@@ -29,7 +25,7 @@ if(isset($_POST))
 	{
 		if(isset($p))
 		{
-			if(f($p)!=$p)
+			if(filter($p)!=$p)
 				die('POST信息不合法');
 		}
 	}
@@ -40,7 +36,7 @@ if(isset($_GET))
 	{
 		if(isset($g))
 		{
-			if(f($g)!=$g)
+			if(filter($g)!=$g)
 				die('GET信息不合法');
 		}
 	}

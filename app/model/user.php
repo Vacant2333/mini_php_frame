@@ -1,5 +1,5 @@
 <?php
-class user_sql extends Model
+class user extends MainModel
 {
 	/*
 	power列
@@ -25,4 +25,3 @@ class user_sql extends Model
 
 	}
 }
-$user_sql=new user_sql();
