@@ -1,5 +1,5 @@
 <footer>
-FFFF
+FOOTER
 </footer>
 </body>
 </html>
