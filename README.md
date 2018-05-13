@@ -1,9 +1,10 @@
 # mini_php_frame
 <br>
 (๑╹◡╹)ﾉ"""
-<br>
-史上最简易的PHPWEB框架
-<br>
+<br><br>
+<h2>史上最简易的PHPWEB框架</h2>
+<br><br>
+<pre>
 app										框架核心部分
 <br>
 	controller						控制器
@@ -39,3 +40,4 @@ app										框架核心部分
 index.php							框架入口
 <br>
 .htaccess
+</pre>
