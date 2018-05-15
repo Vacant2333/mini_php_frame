@@ -4,37 +4,38 @@ namespace controller;
 class MainController
 {
 	//页面内容
-	public $page=array();
+	public $page = array();
 
 	//全局配置文件  /config/config.php
-	public $conf=array();
+	public $conf = array();
 
 	//页面参数
-	public $parameter=array();
+	public $parameter = array();
 
-	function __construct()
+	public function __construct()
 	{
 		global $conf;
-		$this->conf=$conf;
+		$this->conf = $conf;
 
 		if(isset($_SESSION['user']))
 		{
-			$this->parameter['islogin']=true;
-			$this->parameter['user']=$_SESSION['user'];
+			$this->parameter['islogin'] = true;
+			$this->parameter['user'] = $_SESSION['user'];
 		}
 		else
-			$this->parameter['islogin']=false;
+			$this->parameter['islogin'] = false;
 	}
 
-	function page_include($dir)
+	public function page_include($dir)
 	{
 		array_push($this->page,$dir);
 		return;
 	}
 
-	function __destruct()
+	public function __destruct()
 	{
-		if($this->page!=null)
+		//渲染视图
+		if($this->page != null)
 		{
 			foreach($this->page as $p)
 				include($p);

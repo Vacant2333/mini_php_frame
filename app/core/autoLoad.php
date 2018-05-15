@@ -4,17 +4,18 @@ class Psr4AutoLoad
     //存放命名空间映射
     protected $maps = [];
 
-    function __construct()
+    public function __construct()
     {
-        spl_autoload_register([$this, 'autoload']);
+        spl_autoload_register([$this,'autoload']);
     }
 
-    function autoload($className)
+    public function autoload($className)
     {
         /*
-            className   controller\IndexController
-            namespace   controller
-            realClass   IndexController
+			当自动加载为首页时
+            $className = controller\IndexController
+            $namespace = controller
+            $realClass = IndexController
         */
         //完整的类名由空间名和类名组成
         //得到命名空间名，根据命名空间名得到其目录路径
@@ -23,10 +24,10 @@ class Psr4AutoLoad
         //得到类名
         $realClass = substr($className, $pos + 1);
         //找到文件并且包含
-        $this->mapLoad($namespace, $realClass);
+        $this->mapLoad($namespace,$realClass);
     }
 
-    function mapLoad($namespace, $realClass)
+    public function mapLoad($namespace,$realClass)
     {
         //判断是否映射过
         if(array_key_exists($namespace, $this->maps))
@@ -35,7 +36,7 @@ class Psr4AutoLoad
         //处理路径
         $namespace = rtrim(str_replace('\\/', '/', $namespace), '/') . '/';
         //拼接文件全路径
-        $filePath = $namespace . $realClass . '.php';
+        $filePath = $namespace.$realClass.'.php';
 		
         if(file_exists($filePath) && !class_exists($realClass))
 		{
@@ -49,7 +50,7 @@ class Psr4AutoLoad
     }
 
     //命名空间 路径  将命名空间和路径保存到映射数组中
-    function addMaps($namespace, $path)
+    public function addMaps($namespace, $path)
     {
         if(array_key_exists($namespace, $this->maps))
 		{

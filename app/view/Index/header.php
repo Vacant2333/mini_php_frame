@@ -1,4 +1,4 @@
-<html lang="zh-CN">
+<html>
 <head>
     <title>TEST TITLE</title>
 </head>
