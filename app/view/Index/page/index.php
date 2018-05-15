@@ -1,1 +1,1 @@
-INDEX内容
+INDEX内容<?php var_dump($this->parameter)?>
