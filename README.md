@@ -27,7 +27,7 @@ app                      框架核心部分
     Safe.php             核心安全部分
   model                  数据库层
     MainModel.php        所有库的父类
-    user.class.php             user表 的专用class(自行更改)
+    user.class.php       user表 的专用class(自行更改)
   view                   view层
     Index                Index控制器的view层
       page               Index控制器中各页面的view
