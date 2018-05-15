@@ -2,7 +2,7 @@
 <br>
 (≧ω≦)/(≧ω≦)/(≧ω≦)/
 <br>
-演示地址: <a href="/miniframe.vacant.mobi">[戳我]</a>
+演示地址: <a href="HTTP://miniframe.vacant.mobi">[戳我]</a>
 <br><br>
 <h2>史上最简易的PHPWEB框架</h2>
 <h3>代码仅8 KB && 注释详细</h3>
