@@ -1,4 +1,4 @@
-# mini_php_frame
+# Mini_PHP_Frame
 <br>
 (≧ω≦)/(≧ω≦)/(≧ω≦)/
 <br>
@@ -7,15 +7,14 @@
 <h2>史上最简易的PHPWEB框架</h2>
 <h3>代码仅7 KB && 注释详细</h3>
 <br>
-
 访问   xxx.com 等同于访问  xxx.com/Index/index
+默认控制器: Index 默认方法: index  可在/index.php 中修改
 <br>
 url结构: xxx.com/控制器/方法/参数1/参数2/参数x
 <br>
 获取参数: $url[3]为参数1  $url[4]为参数2
 <br>
 首次使用请在config/config.php修改配置
-
 <br>
 <h3>文件结构</h3>
 <br>
