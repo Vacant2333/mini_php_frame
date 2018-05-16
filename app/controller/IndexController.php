@@ -17,6 +17,14 @@ class IndexController extends MainController
 		$this->page_include("{$this->conf['absolute_address']}app/view/Index/page/index.php");
 	}
 
+	public function getUserModelConnect()
+	{
+		//无需 include 直接 new
+		//仅作为例子 如需使用请先配置config.php
+		$sql = new userModel();
+		return $sql;
+	}
+	
 	public function __destruct()
 	{
 		$this->page_include("{$this->conf['absolute_address']}app/view/Index/footer.php");

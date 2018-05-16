@@ -5,7 +5,7 @@
 演示地址: <a href="http://miniframe.vacant.mobi">[戳我]</a>
 <br><br>
 <h2>史上最简易的PHPWEB框架</h2>
-<h3>代码仅8 KB && 注释详细</h3>
+<h3>代码仅7 KB && 注释详细</h3>
 <br>
 
 访问   xxx.com 等同于访问  xxx.com/Index/index
@@ -29,7 +29,7 @@ app                      |框架核心部分
     Safe.php             |核心安全部分
   model                  |数据库层
     MainModel.php        |所有库的父类
-    userModel.class.php  |user表 的专用class(自行更改)
+    userModel.php        |user表 的专用class(自行更改)
   view                   |view层
     Index                |Index控制器的view层
       page               |Index控制器中各页面的view
