@@ -32,13 +32,13 @@ class MainModel
 		if($r == TRUE)
 			return $result;
 		else
-			return false;
+			return FALSE;
 	}
 	
 	//根据某条信息筛选数据(筛选列名,筛选列值,需要获取字段名)
 	public function sql_getFormInfo($w,$wd,$c)
 	{
-		$sql = "select ".$c." from ".$this->bname." where ".$w."='".$wd."';";
+		$sql = "select {$c} from {$this->bname} where {$w}='{$wd}';";
 		$r = $this->sql_connect->query($sql)->fetch_array();
 		return $r[$c];
 	}
@@ -46,12 +46,13 @@ class MainModel
 	//获取表内数据总数
 	public function sql_getCount()
 	{
-		$result = $this->sql_connect->query("select count(*) from ".$this->bname.";")->fetch_array();
+		$result = $this->sql_connect->query("select count(*) from {$this->bname};")->fetch_array();
 		return $result[0];
 	}
 	
 	public function __destruct()
 	{
 		mysqli_close($this->sql_connect);
+		unset($this->dbname,$this->conf,$this->bname,$this->sql_connect);
 	}
 }

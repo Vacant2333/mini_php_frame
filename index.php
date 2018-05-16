@@ -1,5 +1,6 @@
 <?php
 session_start();
+//设置时区
 date_default_timezone_set('PRC');
 
 //设置

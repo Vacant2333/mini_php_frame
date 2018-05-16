@@ -2,7 +2,7 @@
 <br>
 (≧ω≦)/(≧ω≦)/(≧ω≦)/
 <br>
-演示地址: <a href="HTTP://miniframe.vacant.mobi">[戳我]</a>
+演示地址: <a href="http://miniframe.vacant.mobi">[戳我]</a>
 <br><br>
 <h2>史上最简易的PHPWEB框架</h2>
 <h3>代码仅8 KB && 注释详细</h3>
@@ -20,24 +20,29 @@ url结构: xxx.com/控制器/方法/参数1/参数2/参数x
 <h3>文件结构</h3>
 <br>
 <pre>
-app                      框架核心部分
-  controller             控制器
-    IndexController.php  Index 默认控制器
-    MainController.php   所有控制器的父类
-  core                   框架核心部分
-    AutoLoad.php         自动加载(Psr4AutoLoad)
-    Safe.php             核心安全部分
-  model                  数据库层
-    MainModel.php        所有库的父类
-    user.class.php       user表 的专用class(自行更改)
-  view                   view层
-    Index                Index控制器的view层
-      page               Index控制器中各页面的view
-        index.php        Index控制器中index页面的内容
-      footer.php         Index控制器中的footer
-      header.php         Index控制器中的header
-index.php                框架入口
-.htaccess                Rerite
+app                      |框架核心部分
+  controller             |控制器
+    IndexController.php  |Index 默认控制器
+    MainController.php   |所有控制器的父类
+  core                   |框架核心部分
+    AutoLoad.php         |自动加载(Psr4AutoLoad)
+    Safe.php             |核心安全部分
+  model                  |数据库层
+    MainModel.php        |所有库的父类
+    userModel.class.php  |user表 的专用class(自行更改)
+  view                   |view层
+    Index                |Index控制器的view层
+      page               |Index控制器中各页面的view
+        index.php        |Index控制器中index页面的内容
+      footer.php         |Index控制器中的footer
+      header.php         |Index控制器中的header
+config                   |设置文件内容
+  config.php             |设置文件
+public                   |公用文件夹
+  img                    |图片文件夹
+    bg.jpg               |背景文件
+index.php                |框架入口
+.htaccess                |Rerite
 </pre>
 <br>
 <h3>规范</h3>
@@ -47,3 +52,4 @@ MySQL的表名需小写或小写加下划线，如：item，car_orders
 <br>
 方法名（Action）需用小驼峰命名法，即首字母小写，如：index，indexPost
 <br>
+模型名(Model)需用小骆驼峰命名法，首字母小写，userModel(父类用大骆驼峰命名法)

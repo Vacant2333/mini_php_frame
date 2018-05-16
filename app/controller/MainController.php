@@ -6,7 +6,7 @@ class MainController
 	//页面内容
 	public $page = array();
 
-	//全局配置文件  /config/config.php
+	//全局配置文件
 	public $conf = array();
 
 	//页面参数
@@ -40,5 +40,8 @@ class MainController
 			foreach($this->page as $p)
 				include($p);
 		}
+		
+		unset($_POST,$_GET,$this->page,$this->conf,$this->parameter);
+		session_destroy();
 	}
 }

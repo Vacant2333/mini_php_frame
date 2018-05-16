@@ -1,4 +1,9 @@
 <?php
+/*
+遍历所有GET POST信息
+判断 过滤后字符串是否和原字符串相同
+不相同则直接die
+*/
 function filter($str) 
 {
 	$html_string = array("&amp;","&nbsp;","'",'"',"<",">","\t","\r");
@@ -18,7 +23,7 @@ function filter($str)
 	$replace = array("","","","","");
 	return htmlspecialchars(str_replace($search,$replace,$str));
 }
-//遍历POST及GET信息判断是否合法
+
 if(isset($_POST))
 {
 	foreach($_POST as $p)
@@ -26,7 +31,7 @@ if(isset($_POST))
 		if(isset($p))
 		{
 			if(filter($p)!= $p)
-				die('POST信息不合法');
+				die('信息不合法');
 		}
 	}
 }
@@ -37,7 +42,7 @@ if(isset($_GET))
 		if(isset($g))
 		{
 			if(filter($g)!= $g)
-				die('GET信息不合法');
+				die('信息不合法');
 		}
 	}
 }

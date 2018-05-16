@@ -14,4 +14,6 @@ height: 100%;
 ">
 <header>
 HEADER
+<br>
+文件位于:/app/view/Index/header.php
 </header>

@@ -1,16 +1,18 @@
 <?php
-class user extends MainModel
+class userModel extends MainModel
 {
 	public function __construct()
 	{
 		parent::__construct();
+		
+		//声明需要操作的表名
 		$this->bname = 'user';
 	}
 	
 	//通过user列信息筛选数据
 	public function getUserInfo($user)
 	{
-		$sql = "select * from ".$this->bname." where user='".$user."';";
+		$sql = "select * from {$this->bname} where user='{$user}';";
 		$r = $this->sql_query($sql)->fetch_array();
 		return $r;
 	}
