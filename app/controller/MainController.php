@@ -16,7 +16,8 @@ class MainController
 	{
 		global $conf;
 		$this->conf = $conf;
-
+		
+		session_start();
 		if(isset($_SESSION['user']))
 		{
 			$this->parameter['islogin'] = true;
@@ -42,6 +43,5 @@ class MainController
 		}
 		
 		unset($_POST,$_GET,$this->page,$this->conf,$this->parameter);
-		session_destroy();
 	}
 }

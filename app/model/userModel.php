@@ -1,4 +1,6 @@
 <?php
+namespace model;
+
 class userModel extends MainModel
 {
 	public function __construct()

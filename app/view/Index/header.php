@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>TEST TITLE</title>
+    <title>Mini_PHP_Frame</title>
 </head>
 <body style="
 background-image: url(/public/img/bg.jpg);
@@ -13,7 +13,7 @@ top: 0px;
 height: 100%;
 ">
 <header>
-HEADER
+HEADER(头)
 <br>
 文件位于:/app/view/Index/header.php
 </header>

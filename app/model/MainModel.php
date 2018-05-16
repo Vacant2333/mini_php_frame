@@ -1,13 +1,15 @@
 <?php
+namespace model;
+
 class MainModel
 {
+	public $conf;
+	
 	//库名
 	public $dbname;
 	
 	//数据库连接
 	public $sql_connect;
-	
-	public $conf;
 
 	//表名 在子类的折构函数中赋值
 	public $bname;
@@ -26,28 +28,13 @@ class MainModel
 	}
 	
 	//执行sql语句
-	public function sql_query($sql)
+	public function querySql($sql)
 	{
 		$result = $this->sql_connect->query($sql);
 		if($r == TRUE)
 			return $result;
 		else
 			return FALSE;
-	}
-	
-	//根据某条信息筛选数据(筛选列名,筛选列值,需要获取字段名)
-	public function sql_getFormInfo($w,$wd,$c)
-	{
-		$sql = "select {$c} from {$this->bname} where {$w}='{$wd}';";
-		$r = $this->sql_connect->query($sql)->fetch_array();
-		return $r[$c];
-	}
-	
-	//获取表内数据总数
-	public function sql_getCount()
-	{
-		$result = $this->sql_connect->query("select count(*) from {$this->bname};")->fetch_array();
-		return $result[0];
 	}
 	
 	public function __destruct()

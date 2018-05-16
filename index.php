@@ -1,5 +1,4 @@
 <?php
-session_start();
 //设置时区
 date_default_timezone_set('PRC');
 
@@ -13,12 +12,36 @@ include('app/controller/MainController.php');
 
 //自动加载
 include('app/core/AutoLoad.php');
-//$_POST/$_GET传参过滤
+//安全
 include('app/core/Safe.php');
 
-//实例化 自动加载
-$psr = new Psr4AutoLoad();
 
+$safe = new \core\Safe();
+
+if(isset($_POST) || isset($_GET))
+{
+	if(isset($_POST))
+	{
+		foreach($_POST as $p)
+		{
+			$fg = $safe->filter($g);
+			if($fg != $g || $fg==FALSE)
+				die('POST信息不合法');
+		}
+	}
+	if(isset($_GET))
+	{
+		foreach($_GET as $p)
+		{
+			$fg = $safe->filter($g);
+			if($fg != $g || $fg==FALSE)
+				die('GET信息不合法');
+		}
+	}
+}
+
+//自动加载
+$psr = new \core\Psr4AutoLoad();
 //url : xxx.com/controller/action/array[0]/array[1]
 //从url中获取要执行的哪个控制器中的哪个方法
 $url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
@@ -31,9 +54,11 @@ $m = isset($url[1]) && strlen($url[1]) > 0 ? ucfirst(strtolower($url[1])) : 'Ind
 $a = isset($url[2]) && strlen($url[2]) > 0 ? $url[2] : 'index';
 
 //拼接带有命名空间的类名
-$controller = 'controller\\' . $m . 'Controller';
+$controller = '\\controller\\' . $m . 'Controller';
 
 //添加命名空间映射
 $psr->addMaps('controller', 'app/controller');
+$psr->addMaps('model', 'app/model');
+
 $obj = new $controller($conf);
 call_user_func([$obj, $a]);

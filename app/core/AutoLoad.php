@@ -1,4 +1,6 @@
 <?php
+namespace core;
+
 class Psr4AutoLoad
 {
     //存放命名空间映射
