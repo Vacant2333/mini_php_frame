@@ -41,23 +41,15 @@ class Psr4AutoLoad
         $filePath = $namespace.$realClass.'.php';
 		
         if(file_exists($filePath) && !class_exists($realClass))
-		{
             include $filePath;
-        }
-		else
-		{
-            //echo $filePath;
-            //die('文件不存在');
-        }
     }
 
     //命名空间 路径  将命名空间和路径保存到映射数组中
     public function addMaps($namespace, $path)
     {
         if(array_key_exists($namespace, $this->maps))
-		{
             die('此命名空间已经映射');
-        }
+		
         //将命名空间和路径以键值对形式存放到数组中
         $this->maps[$namespace] = $path;
     }

@@ -5,18 +5,12 @@ class MainController
 {
 	//页面内容
 	public $page = array();
-
-	//全局配置文件
-	public $conf = array();
-
+	
 	//页面参数
 	public $parameter = array();
 
 	public function __construct()
-	{
-		global $conf;
-		$this->conf = $conf;
-		
+	{		
 		session_start();
 		if(isset($_SESSION['user']))
 		{
@@ -30,7 +24,6 @@ class MainController
 	public function page_include($dir)
 	{
 		array_push($this->page,$dir);
-		return;
 	}
 
 	public function __destruct()
@@ -41,7 +34,5 @@ class MainController
 			foreach($this->page as $p)
 				include($p);
 		}
-		
-		unset($_POST,$_GET,$this->page,$this->conf,$this->parameter);
 	}
 }

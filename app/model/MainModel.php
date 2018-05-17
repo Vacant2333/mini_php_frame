@@ -3,8 +3,6 @@ namespace model;
 
 class MainModel
 {
-	public $conf;
-	
 	//库名
 	public $dbname;
 	
@@ -16,8 +14,7 @@ class MainModel
 	
 	public function __construct()
 	{
-		global $conf;
-		$this->conf = $conf;
+		$conf=unserialize(CONFIG);
 		$this->dbname = $conf['db_name'];
 		
 		$sql = mysqli_connect($conf['db_ip'],$conf['db_user'],$conf['db_password'],$conf['db_name']);
@@ -40,6 +37,5 @@ class MainModel
 	public function __destruct()
 	{
 		mysqli_close($this->sql_connect);
-		unset($this->dbname,$this->conf,$this->bname,$this->sql_connect);
 	}
 }

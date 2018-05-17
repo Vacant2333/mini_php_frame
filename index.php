@@ -2,7 +2,7 @@
 //设置时区
 date_default_timezone_set('PRC');
 
-//设置
+//全局设置
 include('config/config.php');
 
 //SQL模型
@@ -38,7 +38,6 @@ if(isset($_POST) || isset($_GET))
 				die('GET信息不合法');
 		}
 	}
-	
 	unset($p,$g,$fg,$fp);
 }
 
@@ -62,5 +61,5 @@ $controller = '\\controller\\' . $m . 'Controller';
 $psr->addMaps('controller', 'app/controller');
 $psr->addMaps('model', 'app/model');
 
-$obj = new $controller($conf);
+$obj = new $controller();
 call_user_func([$obj, $a]);
