@@ -3,7 +3,7 @@ namespace core;
 
 class Psr4AutoLoad
 {
-    //存放命名空间映射
+    //命名空间映射
     protected $maps = [];
 
     public function __construct()
@@ -22,11 +22,16 @@ class Psr4AutoLoad
         //完整的类名由空间名和类名组成
         //得到命名空间名，根据命名空间名得到其目录路径
         $pos = strrpos($className, '\\');
-        $namespace = substr($className, 0, $pos);
-        //得到类名
-        $realClass = substr($className, $pos + 1);
-        //找到文件并且包含
-        $this->mapLoad($namespace,$realClass);
+        $namespace = substr($className, 0 , $pos);
+		
+		//校验数据是否正常
+		if($namespace && $pos)
+		{
+			//得到类名
+			$realClass = substr($className,$pos + 1);
+			//找到文件并且包含
+			$this->mapLoad($namespace,$realClass);
+		}
     }
 
     public function mapLoad($namespace,$realClass)
@@ -39,9 +44,13 @@ class Psr4AutoLoad
         $namespace = rtrim(str_replace('\\/', '/', $namespace), '/') . '/';
         //拼接文件全路径
         $filePath = $namespace.$realClass.'.php';
-		
+
         if(file_exists($filePath) && !class_exists($realClass))
             include $filePath;
+		else
+		{
+			die('自动加载失败');
+		}
     }
 
     //命名空间 路径  将命名空间和路径保存到映射数组中

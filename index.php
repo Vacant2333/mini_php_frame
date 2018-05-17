@@ -49,13 +49,13 @@ $url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 //处理index 分割/
 $url = explode('/', $url);
 
-//如果没有就默认index
+//如果没有则默认值为 Index
 //m转换为全小写 首字母大写
-$m = isset($url[1]) && strlen($url[1]) > 0 ? ucfirst(strtolower($url[1])) : 'Index';
-$a = isset($url[2]) && strlen($url[2]) > 0 ? $url[2] : 'index';
+$c = $url[1] ? ucfirst(strtolower($url[1])) : 'Index';
+$a = $url[2] ? $url[2] : 'index';
 
 //拼接带有命名空间的类名
-$controller = '\\controller\\' . $m . 'Controller';
+$controller = '\\controller\\' . $c . 'Controller';
 
 //添加命名空间映射
 $psr->addMaps('controller', 'app/controller');
