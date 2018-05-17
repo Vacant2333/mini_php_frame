@@ -24,20 +24,22 @@ if(isset($_POST) || isset($_GET))
 	{
 		foreach($_POST as $p)
 		{
-			$fg = $safe->filter($g);
-			if($fg != $g || $fg==FALSE)
+			$fp = $safe->filter($p);
+			if($fp != $p || $fp==FALSE)
 				die('POST信息不合法');
 		}
 	}
 	if(isset($_GET))
 	{
-		foreach($_GET as $p)
+		foreach($_GET as $g)
 		{
 			$fg = $safe->filter($g);
 			if($fg != $g || $fg==FALSE)
 				die('GET信息不合法');
 		}
 	}
+	
+	unset($p,$g,$fg,$fp);
 }
 
 //自动加载

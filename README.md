@@ -5,10 +5,11 @@
 演示地址: <a href="http://miniframe.vacant.mobi">[戳我]</a>
 <br><br>
 <h2>史上最简易的PHPWEB框架</h2>
-<h3>代码仅7 KB && 注释详细</h3>
+<h3>代码仅10 KB</h3>
 <br>
 访问   xxx.com 等同于访问  xxx.com/Index/index
-默认控制器: Index 默认方法: index  可在/index.php 中修改
+默认控制器: Index  默认方法: index
+可在/index.php 中修改默认值
 <br>
 url结构: xxx.com/控制器/方法/参数1/参数2/参数x
 <br>
