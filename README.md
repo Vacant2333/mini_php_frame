@@ -4,7 +4,7 @@
 <br>
 演示地址: <a href="http://miniframe.vacant.mobi">[戳我]</a>
 <br><br>
-<h2>史上最简易的PHPWEB框架</h2>
+<h2>最最最 轻 的PHP WEB框架</h2>
 <h3>代码仅10 KB</h3>
 <br>
 访问   xxx.com 等同于访问  xxx.com/Index/index
@@ -53,3 +53,4 @@ MySQL的表名需小写或小写加下划线，如：item，car_orders
 方法名（Action）需用小驼峰命名法，即首字母小写，如：index，indexPost
 <br>
 模型名(Model)需用小骆驼峰命名法，首字母小写，userModel(父类用大骆驼峰命名法)
+<br>

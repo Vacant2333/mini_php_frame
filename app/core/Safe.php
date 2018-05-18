@@ -20,6 +20,6 @@ class Safe
 		$str = preg_replace($style_string,$style_clear,$str);
 		$search = array(" ","　","\n","\r","\t");
 		$replace = array("","","","","");
-		return htmlspecialchars(str_replace($search,$replace,$str));
+		return str_replace($search,$replace,$str);
 	}
 }

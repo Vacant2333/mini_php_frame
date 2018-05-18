@@ -26,7 +26,9 @@ if(isset($_POST) || isset($_GET))
 		{
 			$fp = $safe->filter($p);
 			if($fp != $p || $fp==FALSE)
+			{
 				die('POST信息不合法');
+			}
 		}
 	}
 	if(isset($_GET))
@@ -35,7 +37,9 @@ if(isset($_POST) || isset($_GET))
 		{
 			$fg = $safe->filter($g);
 			if($fg != $g || $fg==FALSE)
+			{
 				die('GET信息不合法');
+			}
 		}
 	}
 	unset($p,$g,$fg,$fp);

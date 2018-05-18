@@ -29,9 +29,13 @@ class MainModel
 	{
 		$result = $this->sql_connect->query($sql);
 		if($r == TRUE)
+		{
 			return $result;
+		}
 		else
+		{
 			return FALSE;
+		}
 	}
 	
 	public function __destruct()

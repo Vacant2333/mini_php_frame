@@ -18,7 +18,9 @@ class MainController
 			$this->parameter['user'] = $_SESSION['user'];
 		}
 		else
+		{
 			$this->parameter['islogin'] = false;
+		}
 	}
 
 	public function page_include($dir)
@@ -32,7 +34,9 @@ class MainController
 		if($this->page != null)
 		{
 			foreach($this->page as $p)
+			{
 				include($p);
+			}
 		}
 	}
 }
