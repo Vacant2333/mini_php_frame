@@ -53,7 +53,7 @@ class Psr4AutoLoad
 		}
 		else
 		{
-			die('自动加载失败');
+			die('类不存在 :)');
 		}
     }
 
@@ -62,7 +62,7 @@ class Psr4AutoLoad
     {
         if(array_key_exists($namespace, $this->maps))
 		{
-            die('此命名空间已经映射');
+            die('此命名空间已经映射 :)');
 		}
 		
         //将命名空间和路径以键值对形式存放到数组中

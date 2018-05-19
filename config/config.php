@@ -14,5 +14,5 @@ $config = array(
 	);
 
 //由于define不能存数组 先字符化 在用的时候数组化
-//unserialize(CONFIG)
+//调用CONFIG   unserialize(CONFIG)
 define("CONFIG",serialize($config));
