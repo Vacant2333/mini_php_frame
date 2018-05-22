@@ -25,7 +25,7 @@ app                      |框架核心部分
     IndexController.php  |Index 默认控制器
     MainController.php   |所有控制器的父类
   core                   |框架核心部分
-    Psr4AutoLoad.php         |自动加载(Psr4AutoLoad)
+    Psr4AutoLoad.php     |自动加载(Psr4AutoLoad)
     Safe.php             |核心安全部分
   model                  |数据库层
     MainModel.php        |所有库的父类
