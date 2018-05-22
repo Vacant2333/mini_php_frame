@@ -7,14 +7,14 @@ class IndexController extends MainController
 	{
 		parent::__construct();
 		
-		$this->page_include(unserialize(CONFIG)['absolute_address']."app/view/Index/header.php");
+		$this->page_include("Index/header.php");
 	}
 
 	public function index()
 	{
 		$this->parameter['page_name']='首页';
 		
-		$this->page_include(unserialize(CONFIG)['absolute_address']."app/view/Index/page/index.php");
+		$this->page_include("Index/page/index.php");
 	}
 
 	public function getUserModelConnect()
@@ -28,7 +28,7 @@ class IndexController extends MainController
 	
 	public function __destruct()
 	{
-		$this->page_include(unserialize(CONFIG)['absolute_address']."app/view/Index/footer.php");
+		$this->page_include("Index/footer.php");
 		
 		parent::__destruct();
 	}

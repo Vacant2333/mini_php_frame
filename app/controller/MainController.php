@@ -10,7 +10,8 @@ class MainController
 	public $parameter = array();
 
 	public function __construct()
-	{		
+	{
+		//判断是否登录   仅作为示例
 		session_start();
 		if(isset($_SESSION['user']))
 		{
@@ -25,6 +26,7 @@ class MainController
 
 	public function page_include($dir)
 	{
+		$dir = unserialize(CONFIG)['absolute_address']."app/view/".$dir;
 		array_push($this->page,$dir);
 	}
 

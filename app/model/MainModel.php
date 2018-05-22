@@ -9,7 +9,7 @@ class MainModel
 	//数据库连接
 	public $sql_connect;
 
-	//表名 在子类的折构函数中赋值
+	//需要操作的表名
 	public $bname;
 	
 	public function __construct()
@@ -28,7 +28,7 @@ class MainModel
 	public function querySql($sql)
 	{
 		$result = $this->sql_connect->query($sql);
-		if($r == TRUE)
+		if($result)
 		{
 			return $result;
 		}

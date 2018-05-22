@@ -2,8 +2,7 @@
 	<div style="
 	border: 1px solid #ccc!important;
 	padding: 14px;
-	border-radius: 10px!important;
-	">
+	border-radius: 10px!important;">
 		<br>
 		调用页面参数实例:
 		<br>

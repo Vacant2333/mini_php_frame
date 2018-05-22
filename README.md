@@ -1,8 +1,8 @@
-# Mini_PHP_Frame
+# Mini_PHP
 <br>
 (≧ω≦)/(≧ω≦)/(≧ω≦)/
 <br>
-演示地址: <a href="http://miniframe.vacant.mobi">[戳我]</a>
+演示地址: <a href="http://miniphp.vacant.mobi">[戳我]</a>
 <br><br>
 <h2>最最最 轻 的PHP WEB框架</h2>
 <h3>代码仅10 KB</h3>
@@ -25,7 +25,7 @@ app                      |框架核心部分
     IndexController.php  |Index 默认控制器
     MainController.php   |所有控制器的父类
   core                   |框架核心部分
-    AutoLoad.php         |自动加载(Psr4AutoLoad)
+    Psr4AutoLoad.php         |自动加载(Psr4AutoLoad)
     Safe.php             |核心安全部分
   model                  |数据库层
     MainModel.php        |所有库的父类
@@ -38,9 +38,6 @@ app                      |框架核心部分
       header.php         |Index控制器中的header
 config                   |设置文件内容
   config.php             |设置文件
-public                   |公用文件夹
-  img                    |图片文件夹
-    bg.jpg               |背景文件
 index.php                |框架入口
 .htaccess                |Rerite
 </pre>
