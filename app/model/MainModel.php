@@ -15,6 +15,7 @@ class MainModel
 	public function __construct()
 	{
 		$conf=unserialize(CONFIG);
+		
 		$this->dbname = $conf['db_name'];
 		
 		$sql = mysqli_connect($conf['db_ip'],$conf['db_user'],$conf['db_password'],$conf['db_name']);

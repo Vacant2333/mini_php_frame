@@ -1,7 +1,7 @@
 <?php
 $config = array(
 	// index.php的绝对路径
-	'absolute_address' => "/webdata/test/",
+	'absolute_address' => "/webdata/miniphp/",
 	
 	//数据库配置(不需要可不配置)
 	//库名
