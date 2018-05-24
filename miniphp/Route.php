@@ -46,8 +46,7 @@ class Route
 						return $url;
 					}
 				}
-				
-				die('error 404');
+				return $returnUrl;
 			}
 			else
 			{
