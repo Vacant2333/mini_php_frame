@@ -1,7 +1,7 @@
 <?php
-namespace model;
+namespace miniphp;
 
-class MainModel
+class Model
 {
 	//库名
 	public $dbname;
@@ -14,11 +14,13 @@ class MainModel
 	
 	public function __construct()
 	{
-		$conf=unserialize(CONFIG);
-		
+		//在这里处理数据库连接
+		//本代码仅作为示例
+		$conf = CONFIG;
 		$this->dbname = $conf['db_name'];
 		
-		$sql = mysqli_connect($conf['db_ip'],$conf['db_user'],$conf['db_password'],$conf['db_name']);
+		$sql = mysqli_connect($conf['db_ip'] , $conf['db_user'] , $conf['db_password'] , $conf['db_name']);
+		//设置数据库编码为UTF8
 		$sql->query("set character set 'utf8';");
 		$sql->query("set names 'utf8';");
 		

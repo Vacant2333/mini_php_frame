@@ -3,19 +3,22 @@
 date_default_timezone_set('PRC');
 
 //全局设置
-include('config/config.php');
+include_once('miniphp/config/config.php');
 
-//SQL主类
-include('app/model/MainModel.php');
+//MODEL主类
+include_once('miniphp/Model.php');
 //控制器主类
-include('app/controller/MainController.php');
+include_once('miniphp/Controller.php');
+//自定义路由
+include_once('miniphp/Route.php');
 //自动加载
-include('app/core/Psr4AutoLoad.php');
+include_once('miniphp/core/Psr4AutoLoad.php');
 //安全
-include('app/core/Safe.php');
+include_once('miniphp/tool/Safe.php');
 
-
-new \core\Safe();
+$route = new \miniphp\Route();
+$Safe = new \miniphp\tool\Safe();
+$psr = new \miniphp\core\Psr4AutoLoad();
 
 if(isset($_POST) || isset($_GET))
 {
@@ -23,7 +26,7 @@ if(isset($_POST) || isset($_GET))
 	{
 		foreach($_POST as $p)
 		{
-			$fp = \core\Safe::filter($p);
+			$fp = $Safe->filter($p);
 			if($fp != $p || $fp==FALSE)
 			{
 				die('POST信息不合法 :)');
@@ -34,33 +37,36 @@ if(isset($_POST) || isset($_GET))
 	{
 		foreach($_GET as $g)
 		{
-			$fg = \core\Safe::filter($g);
+			$fg = $Safe->filter($g);
 			if($fg != $g || $fg==FALSE)
 			{
 				die('GET信息不合法 :)');
 			}
 		}
 	}
-	unset($p,$g,$fg,$fp);
+	unset($p , $g , $fg , $fp);
 }
 
-//url : xxx.com/controller/action/array[3]/array[4]
+//url: xxx.com/controller/action/array[3]/array[4]
 //从url中获取要执行的控制器及方法
 $url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$url = explode('/', $url);
 
+//执行自定义路由
+$url = $route->run($url);
+
+//处理URL
+$url = explode('/' , $url);
 //如果没有则默认值为 Index
 //m转换为全小写 首字母大写
+//c代表controller a代表action
 $c = $url[1] ? ucfirst(strtolower($url[1])) : 'Index';
 $a = $url[2] ? $url[2] : 'index';
 
 //拼接带有命名空间的类名
 $controller = '\\controller\\' . $c . 'Controller';
 
-$psr = new \core\Psr4AutoLoad();
-
 //添加命名空间映射
-$psr->addMaps('controller', 'app/controller');
-$psr->addMaps('model', 'app/model');
+$psr->addMap('controller', 'app/controller');
+$psr->addMap('model', 'app/model');
 
 call_user_func([(new $controller()), $a]);

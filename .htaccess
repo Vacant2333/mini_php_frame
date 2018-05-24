@@ -6,6 +6,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
 
-    # 如果访问的文件或目录不是真实存在，分发请求至 index.php
+    # 如果访问的文件或目录不存在，则请求至 index.php
     RewriteRule . index.php
 </IfModule>

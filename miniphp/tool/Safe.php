@@ -1,5 +1,5 @@
 <?php
-namespace core;
+namespace miniphp\tool;
 
 class Safe
 {
@@ -21,5 +21,13 @@ class Safe
 		$search = array(" ","　","\n","\r","\t");
 		$replace = array("","","","","");
 		return str_replace($search,$replace,$str);
+	}
+	
+	public function cryptPwd($str)
+	{
+		//未完工
+		$str=md5($str);
+		
+		return $str;
 	}
 }

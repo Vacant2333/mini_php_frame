@@ -1,14 +1,14 @@
 <?php
 namespace model;
 
-class userModel extends MainModel
+class userModel extends \miniphp\Model
 {
 	public function __construct()
 	{
 		parent::__construct();
 		
-		//声明当前数据库 表名
-		$this->bname = substr(__CLASS_NAME__,0,-5);
+		//直接从类名获取当前操作表名
+		$this->bname = substr(__CLASS__ , 0 , -5);
 	}
 	
 	//通过user列信息筛选数据
