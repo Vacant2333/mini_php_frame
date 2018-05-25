@@ -69,4 +69,13 @@ $controller = '\\controller\\' . $c . 'Controller';
 $psr->addMap('controller', 'app/controller');
 $psr->addMap('model', 'app/model');
 
-call_user_func([(new $controller()), $a]);
+$class = new $controller();
+
+if(method_exists($class , $a))
+{
+	call_user_func([$class , $a]);
+}
+else
+{
+	die($c . '/' . $a . ' 方法不存在');
+}
