@@ -12,10 +12,12 @@ class userModel extends \miniphp\Model
 	}
 	
 	//通过user列信息筛选数据
-	public function getUserInfo($user)
+	public function getUserInfo($userName)
 	{
-		$sql = "select * from {$this->bname} where user='{$user}';";
-		$result = $this->sql_query($sql)->fetch_array();
+		$stmt = $this->sql_connect->prepare("select * from ? where user='?';");
+		$result = $stmt->bind_param("ss" , $this->bname , $userName)->excute()->fetch_array();
+		$stmt->close();
+		
 		return $result;
 	}
 	

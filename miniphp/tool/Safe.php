@@ -23,10 +23,9 @@ class Safe
 		return str_replace($search,$replace,$str);
 	}
 	
-	public function cryptPwd($str)
+	public function cryptStr($str)
 	{
-		//未完工
-		$str=md5($str);
+		$str = md5(crypt(strrev($str) , CONFIG['cryptSalt']));
 		
 		return $str;
 	}

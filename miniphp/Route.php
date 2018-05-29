@@ -3,13 +3,14 @@ namespace miniphp;
 
 class Route
 {
-	/*
-	自定义路由(缩短URL)
-	当用户访问 xxx.com/register
-	变为 xxx.com/Index/register
-	*/
-	//获取自定义路由参数
-	public $route = ROUTE;
+	//自定义路由参数
+	public $route;
+	
+	public function __construct()
+	{
+		$this->route = $this->getRouteConfig();
+	}
+	
 	
 	public function run($url)
 	{
@@ -37,7 +38,7 @@ class Route
 						}
 					}
 				}
-				
+				//判断访问的URL是否存在路由配置中
 				foreach($this->route as $left => $right)
 				{
 					if($ru == $left)
@@ -57,5 +58,10 @@ class Route
 		{
 			return $returnUrl;
 		}
+	}
+	
+	public function getRouteConfig()
+	{
+		return ROUTE;
 	}
 }

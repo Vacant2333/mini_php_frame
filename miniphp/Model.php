@@ -20,25 +20,17 @@ class Model
 		$this->dbname = $conf['db_name'];
 		
 		$sql = mysqli_connect($conf['db_ip'] , $conf['db_user'] , $conf['db_password'] , $conf['db_name']);
+		
+		if(mysqli_connect_error())
+		{
+			die('SQL连接失败');
+		}
+		
 		//设置数据库编码为UTF8
 		$sql->query("set character set 'utf8';");
 		$sql->query("set names 'utf8';");
 		
 		$this->sql_connect = $sql;
-	}
-	
-	//执行sql语句
-	public function querySql($sql)
-	{
-		$result = $this->sql_connect->query($sql);
-		if($result)
-		{
-			return $result;
-		}
-		else
-		{
-			return FALSE;
-		}
 	}
 	
 	public function __destruct()

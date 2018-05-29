@@ -5,7 +5,10 @@
 define("CONFIG",
 	array(
 		// index.php的绝对路径
-		'absolute_address' => "/root/webdata/miniphp/",
+		'absolute_address' => '/root/webdata/miniphp/',
+		
+		//加密salt
+		'cryptSalt' => 'QAQ',
 		
 		//数据库配置(不需要可不配置)
 		//库名

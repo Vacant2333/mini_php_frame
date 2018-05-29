@@ -71,6 +71,7 @@ $psr->addMap('model', 'app/model');
 
 $class = new $controller();
 
+//判断方法是否存在
 if(method_exists($class , $a))
 {
 	call_user_func([$class , $a]);
