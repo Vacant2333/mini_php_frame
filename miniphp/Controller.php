@@ -3,7 +3,7 @@ namespace miniphp;
 
 class Controller
 {
-	//页面内容
+	//需要使用的view
 	public $page = array();
 	
 	//页面参数
@@ -16,7 +16,7 @@ class Controller
 
 	public function page_include($dir)
 	{
-		$dir = CONFIG['absolute_address'] . "app/view/" . $dir;
+		$dir = __CONFIG__['absolute_address'] . "app/view/" . $dir;
 		array_push($this->page , $dir);
 	}
 

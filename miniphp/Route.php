@@ -4,20 +4,17 @@ namespace miniphp;
 class Route
 {
 	//自定义路由参数
-	public $route;
+	public $routeConfig;
 	
 	public function __construct()
 	{
-		$this->route = $this->getRouteConfig();
+		$this->routeConfig = $this->getRouteConfig();
 	}
 	
 	
-	public function run($url)
+	public function run()
 	{
-		//保存原始URL
-		$returnUrl = $url;
-		
-		if($this->route || is_array($this->route))
+		if($this->routeConfig || is_array($this->routeConfig))
 		{
 			$url = explode('/' , $url);
 			//把 xxx.com/c/a/ 转换为 /c/a
@@ -38,8 +35,9 @@ class Route
 						}
 					}
 				}
+				
 				//判断访问的URL是否存在路由配置中
-				foreach($this->route as $left => $right)
+				foreach($this->routeConfig as $left => $right)
 				{
 					if($ru == $left)
 					{
@@ -47,21 +45,22 @@ class Route
 						return $url;
 					}
 				}
-				return $returnUrl;
+				
+				return __URL__;
 			}
 			else
 			{
-				return $returnUrl;
+				return __URL__;
 			}
 		}
 		else
 		{
-			return $returnUrl;
+			return __URL__;
 		}
 	}
 	
 	public function getRouteConfig()
 	{
-		return ROUTE;
+		return __ROUTE__;
 	}
 }

@@ -38,7 +38,7 @@ index.php                |框架入口
 <br>
 访问 xxx.com 等同于访问  xxx.com/Index/index
 默认控制器: Index  默认方法: index
-可在/index.php 中修改默认控制器和默认方法
+可在入口文件/index.php 中修改默认控制器和默认方法
 <br>
 url结构: xxx.com/控制器/方法/参数1/参数2/参数x
 <br>
