@@ -5,7 +5,7 @@
 define("__CONFIG__",
 	array(
 		// index.php的绝对路径
-		'absolute_address' => '/root/webdata/miniphp/',
+		'absolute_address' => '/root/http/miniphp/',
 		
 		//加密salt
 		'cryptSalt' => 'cryptSalt',
