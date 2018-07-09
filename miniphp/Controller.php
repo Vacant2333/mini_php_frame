@@ -5,13 +5,13 @@ class Controller
 {
 	//需要使用的view
 	public $page = array();
-	
+
 	//页面参数
 	public $parameter = array();
 
 	public function __construct()
 	{
-		
+		//你好我的朋友
 	}
 
 	public function page_include($dir)

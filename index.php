@@ -13,7 +13,7 @@ include_once('miniphp/Controller.php');
 include_once('miniphp/Route.php');
 //自动加载
 include_once('miniphp/core/Psr4AutoLoad.php');
-//安全
+//安全相关的方法
 include_once('miniphp/tool/Safe.php');
 
 $url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
