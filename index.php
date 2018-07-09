@@ -65,8 +65,8 @@ $a = $url[2] ? $url[2] : 'index';
 $controller = '\\controller\\' . $c . 'Controller';
 
 //添加命名空间映射
-$psr->addMap('controller', 'app/controller');
-$psr->addMap('model', 'app/model');
+$psr->addMap('controller' , 'app/controller');
+$psr->addMap('model' , 'app/model');
 
 $class = new $controller();
 

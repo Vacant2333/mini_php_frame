@@ -14,6 +14,8 @@ class IndexController extends \miniphp\Controller
 	public function index()
 	{
 		$this->parameter['page_name'] = '首页';
+		$Safe = new \miniphp\tool\Safe();
+		$this->parameter['passwd'] = $Safe->cryptStr('xxx');
 
 		$this->page_include("Index/page/index.php");
 	}
