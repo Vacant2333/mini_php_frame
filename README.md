@@ -1,8 +1,6 @@
-# Mini_PHP
+# Mini_PHP 网页MVC框架
 <br>
-(≧ω≦)/(≧ω≦)/(≧ω≦)/
-<br>
-演示地址: <a href="http://miniphp.vacant.mobi">[戳我]</a>
+演示地址: <a href="http://miniphp.vacant.mobi">[点我]</a>
 <br>
 注: 需要PHP7+ 否则config文件会报错(php7+ 才支持define的内容为数组)
 <br><br>
@@ -35,19 +33,15 @@ miniphp                  |框架文件
 index.php                |框架入口
 .htaccess                |Rerite
 </pre>
-<br>
-访问 xxx.com 等同于访问  xxx.com/Index/index
+<p>
 默认控制器: Index  默认方法: index
+所以: 访问 xxx.com 等同于访问  xxx.com/Index/index
 可在入口文件/index.php 中修改默认控制器和默认方法
-<br>
-url结构: xxx.com/控制器/方法/参数1/参数2/参数x
-<br>
+url结构: xxx.com/控制器/方法/参数1/参数2/参数3/参数+
 获取参数: $url[3]为参数1  $url[4]为参数2
-<br>
 首次使用请在/miniphp/config/config.php
-<br>
 修改 'absolute_address' 为你的index的根目录
-<br>
+</p>
 <h3>初次使用:</h3>
 安装php7
 <br>

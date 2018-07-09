@@ -68,7 +68,6 @@ $controller = '\\controller\\' . $c . 'Controller';
 $psr->addMap('controller', 'app/controller');
 $psr->addMap('model', 'app/model');
 
-
 $class = new $controller();
 
 //判断方法是否存在

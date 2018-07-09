@@ -3,7 +3,7 @@ namespace miniphp\tool;
 
 class Safe
 {
-	public function filter($str) 
+	public function filter($str)
 	{
 		$html_string = array("&amp;","&nbsp;","'",'"',"<",">","\t","\r");
 		$html_clear = array("&"," ","&#39;","&quot;","&lt;", "&gt;", "&nbsp; &nbsp; ","");
@@ -22,11 +22,10 @@ class Safe
 		$replace = array("","","","","");
 		return str_replace($search,$replace,$str);
 	}
-	
+
 	public function cryptStr($str)
 	{
-		$str = md5(crypt(strrev($str) , CONFIG['cryptSalt']));
-		
+		$str = password_hash($str , CONFIG['crypt_salt']);
 		return $str;
 	}
 }
