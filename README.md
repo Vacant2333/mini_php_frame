@@ -3,7 +3,8 @@
 环境: PHP7+,Linux_CentOS6,Apache
 <br>
 <h2>最最最 轻 的PHP WEB框架</h2>
-<h3>代码仅9 KB!</h3>
+<br>
+代码仅10 KB!
 <br>
 演示地址: <a href="http://miniphp.vacant.mobi">[点我]</a>
 <br>
