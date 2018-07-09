@@ -21,7 +21,7 @@ class Model
 
 		if(mysqli_connect_error())
 		{
-			die('SQL连接失败');
+			die('MySql连接失败');
 		}
 
 		//设置数据库编码为UTF8以支持中文

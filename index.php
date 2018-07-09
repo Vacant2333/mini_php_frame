@@ -57,7 +57,6 @@ $url = $route->run();
 $url = explode('/' , $url);
 //如果没有则默认值为 Index
 //c(Controller)转换为全小写 首字母大写
-//c代表controller a代表action
 $c = $url[1] ? ucfirst(strtolower($url[1])) : 'Index';
 $a = $url[2] ? $url[2] : 'index';
 

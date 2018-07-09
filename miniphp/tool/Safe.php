@@ -25,10 +25,7 @@ class Safe
 
 	public function cryptStr($str)
 	{
-		$options = [
-		    'cost' => 8,
-		];
-		$str = password_hash($str , PASSWORD_BCRYPT , $options);
+		$str = crypt(md5($str , true) , __CONFIG__['crypt_salt']);
 		return $str;
 	}
 }

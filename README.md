@@ -1,4 +1,4 @@
-# Mini_PHP 网页MVC框架
+# Mini_PHP MVC框架
 <br>
 环境: PHP7+,Linux_CentOS6,Apache
 <br>
@@ -6,7 +6,7 @@
 <br>
 代码仅10 KB!
 <br>
-演示地址: <a href="http://miniphp.vacant.mobi">[点我]</a>
+演示地址: <a href="http://miniphp.vacant.mobi">[点我丫]</a>
 <br>
 <h3>文件结构</h3>
 <br>

@@ -10,8 +10,8 @@ define("__CONFIG__",
 		// index.php的绝对路径
 		'absolute_address' => '/root/http/miniphp/',
 
-		//加密salt(int)  已弃用
-		'crypt_salt' => 7355608,
+		//加密盐(不能有中文)
+		'crypt_salt' => "ILoveAngelic47",
 
 		//数据库配置(不需要可不配置)
 		'db' => array(

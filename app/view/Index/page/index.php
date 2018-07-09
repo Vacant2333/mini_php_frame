@@ -4,7 +4,7 @@
 		<br>
 		<?php var_dump($this->parameter);?>
 		<br>
-		加密(xxx):
+		加密后的字符串:
 		<br>
 		<?php echo $this->parameter['passwd'];?>
 		<br>
