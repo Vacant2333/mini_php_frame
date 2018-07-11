@@ -13,42 +13,12 @@ include_once('miniphp/Controller.php');
 include_once('miniphp/Route.php');
 //自动加载
 include_once('miniphp/core/Psr4AutoLoad.php');
-//安全相关的方法
-include_once('miniphp/tool/Safe.php');
 
 $url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 define('__URL__' , $url);
 
 $route = new \miniphp\Route();
-$Safe = new \miniphp\tool\Safe();
 $psr = new \miniphp\core\Psr4AutoLoad();
-
-if(isset($_POST) || isset($_GET))
-{
-	if(isset($_POST))
-	{
-		foreach($_POST as $p)
-		{
-			$fp = $Safe->filter($p);
-			if($fp != $p || $fp==FALSE)
-			{
-				die('POST信息不合法 :)');
-			}
-		}
-	}
-	if(isset($_GET))
-	{
-		foreach($_GET as $g)
-		{
-			$fg = $Safe->filter($g);
-			if($fg != $g || $fg==FALSE)
-			{
-				die('GET信息不合法 :)');
-			}
-		}
-	}
-	unset($p , $g , $fg , $fp);
-}
 
 //执行自定义路由
 $url = $route->run();

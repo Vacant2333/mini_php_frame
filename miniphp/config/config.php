@@ -22,7 +22,7 @@ define("__CONFIG__",
 			//用户
 			'user' => 'root',
 			//密码
-			'password' => 'root_password'
+			'password' => 'root_password',
 		)
 	));
 
@@ -31,5 +31,5 @@ define('__ROUTE__',
 	array(
 		'/register/' => "/Index/register",
 		'/loginxxx/' => "/Index/login/xxx",
-		'/archive/2/' => "/Archive/list/2"
+		'/archive/2/' => "/Archive/list/2",
 	));
