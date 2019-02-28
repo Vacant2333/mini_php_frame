@@ -1,9 +1,4 @@
 <?php
-/*
-如果本文件报错极有可能是PHP版本小于7
-只有PHP7+才支持define的参数是数组
-*/
-
 //框架全局设置
 define("__CONFIG__",
 	array(

@@ -23,10 +23,10 @@ app                      |页面内容
     footer.php           |index底部内容
 miniphp                  |框架文件
   config                 |设置
-    config.php           |设置文件
+    Config.php           |设置文件
   core                   |核心
     Psr4AutoLoad.php     |自动加载(Psr4)
-  tool                   |工具
+  utils                  |工具
     Safe.php             |安全(加密,过滤)
   Controller.php         |控制器(父类)
   Model.php              |模型(父类)

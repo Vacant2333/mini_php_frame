@@ -3,7 +3,7 @@ namespace miniphp;
 
 class Controller
 {
-	//需要使用的view
+	//需要加载的view
 	public $page = array();
 
 	//页面参数
@@ -11,7 +11,7 @@ class Controller
 
 	public function __construct()
 	{
-		//你好我的朋友
+		
 	}
 
 	public function page_include($dir)

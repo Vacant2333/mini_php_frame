@@ -15,8 +15,8 @@ class IndexController extends \miniphp\Controller
 	{
 		$this->parameter['page_name'] = '首页';
 
-		$Safe = new \miniphp\tool\Safe();
-		$this->parameter['passwd'] = $Safe->cryptStr('我是你的密码呀(>^ω^<)');
+		$Safe = new \miniphp\utils\Safe();
+		$this->parameter['passwd'] = $Safe->cryptStr('我是你的密码');
 
 		$this->page_include("Index/page/index.php");
 	}
@@ -32,7 +32,6 @@ class IndexController extends \miniphp\Controller
 	{
 		//此函数用于获取User表的数据库类实例
 		//无需 include 直接 new(自动加载会帮你include)
-		//仅作为例子 如需使用请先配置config.php
 		return new userModel();
 	}
 
