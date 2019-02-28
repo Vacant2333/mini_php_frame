@@ -4,18 +4,18 @@ namespace miniphp;
 class Model
 {
 	//库名
-	public $dbname;
+	public $db_bname;
 
 	//数据库连接
 	public $sql_connect;
 
 	//操作的表名
-	public $bname;
+	public $table_name;
 
 	public function __construct()
 	{
 		$conf = __CONFIG__['db'];
-		$this->dbname = $conf['name'];
+		$this->table_bname = $conf['name'];
 
 		$sql = mysqli_connect($conf['ip'] , $conf['user'] , $conf['password'] , $conf['name']);
 

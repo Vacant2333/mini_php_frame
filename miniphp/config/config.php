@@ -26,7 +26,7 @@ define("__CONFIG__",
 		)
 	));
 
-//自定义路由参数(一定要按照示例修改)
+//自定义路由
 define('__ROUTE__',
 	array(
 		'/register/' => "/Index/register",
