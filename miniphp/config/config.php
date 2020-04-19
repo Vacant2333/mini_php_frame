@@ -6,7 +6,7 @@ define("__CONFIG__",
 		'absolute_address' => '/root/http/miniphp/',
 
 		//加密盐(不能有中文)
-		'crypt_salt' => "ILoveAngelic47",
+		'crypt_salt' => "yourCryptSalt",
 
 		//数据库配置(不需要可不配置)
 		'db' => array(
@@ -17,7 +17,7 @@ define("__CONFIG__",
 			//用户
 			'user' => 'root',
 			//密码
-			'password' => 'root_password',
+			'password' => 'password',
 		)
 	));
 

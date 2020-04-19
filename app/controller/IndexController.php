@@ -16,7 +16,7 @@ class IndexController extends \miniphp\Controller
 		$this->parameter['page_name'] = '首页';
 
 		$Safe = new \miniphp\utils\Safe();
-		$this->parameter['passwd'] = $Safe->cryptStr('我是你的密码');
+		$this->parameter['passwd'] = $Safe->cryptStr('你需要加密的字符串');
 
 		$this->page_include("Index/page/index.php");
 	}
