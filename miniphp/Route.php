@@ -43,7 +43,6 @@ class Route
 						return $url;
 					}
 				}
-
 				return __URL__;
 			}
 			else
