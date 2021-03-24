@@ -3,9 +3,6 @@ namespace miniphp;
 
 class Model
 {
-	//库名
-	public $db_bname;
-
 	//数据库连接
 	public $sql_connect;
 

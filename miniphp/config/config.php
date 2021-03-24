@@ -10,14 +10,14 @@ define("__CONFIG__",
 
 		//数据库配置
 		'db' => array(
-			//库名
-			'name' => 'db_name',
 			//地址
 			'ip' => 'localhost',
 			//用户
 			'user' => 'root',
 			//密码
 			'password' => 'password',
+			//库名
+			'name' => 'db_name'
 		)
 	));
 
