@@ -3,7 +3,7 @@
 define("__CONFIG__",
 	array(
 		//index.php的绝对路径
-		'absolute_address' => '',
+		'absolute_address' => '/usr/share/nginx/html/',
 
 		//加密Salt
 		'crypt_salt' => "yourCryptSalt",
@@ -12,11 +12,11 @@ define("__CONFIG__",
 		'db' => array(
 			//地址
 			'ip' => 'localhost',
-			//用户
+			//用户名
 			'user' => 'root',
-			//密码
+			//用户密码
 			'password' => 'password',
-			//库名
+			//连接的库名
 			'name' => 'db_name'
 		)
 	));

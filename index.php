@@ -25,9 +25,11 @@ $psr = new \miniphp\core\Psr4AutoLoad();
 $url = $route->run();
 //处理URL
 $url = explode('/', $url);
+
 //c(Controller)转换为全小写 首字母大写,默认值为index
-$c = $url[1] ? ucfirst(strtolower($url[1])) : 'Index';
-$a = $url[2] ? $url[2] : 'index';
+$c = @$url[1] ? ucfirst(strtolower($url[1])) : 'Index';
+$a = @$url[2] ? $url[2] : 'index';
+
 //拼接带有命名空间的类名
 $controller = '\\controller\\' . $c . 'Controller';
 
