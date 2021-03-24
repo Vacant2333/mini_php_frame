@@ -1,8 +1,8 @@
 # Mini_PHP MVC框架
 <br>
-环境: PHP7+,Linux_CentOS6,Apache
+环境: PHP5.6+, Linux_CentOS7, Apache/Nginx
 <br>
-<h2>最最最 轻 的PHP WEB框架</h2>
+<h2>超级轻的PHP Web框架</h2>
 <br>
 代码仅10 KB!
 <br>
@@ -83,8 +83,7 @@ __CONFIG__(一维数组) 全局配置
 URL结构: xxx.com/控制器/方法/参数1/参数2/参数3/参数+
 <br>
 获取URL参数: $url[3]为参数1  $url[4]为参数2
-
-
-
-<br><br><br>
+<br>
+<br>
+<br>
 最后更新时间:2021/3/24
