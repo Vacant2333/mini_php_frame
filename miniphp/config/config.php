@@ -2,13 +2,13 @@
 //框架全局设置
 define("__CONFIG__",
 	array(
-		// index.php的绝对路径
-		'absolute_address' => '/root/http/miniphp/',
+		//index.php的绝对路径
+		'absolute_address' => '',
 
-		//加密盐(不能有中文)
+		//加密Salt
 		'crypt_salt' => "yourCryptSalt",
 
-		//数据库配置(不需要可不配置)
+		//数据库配置
 		'db' => array(
 			//库名
 			'name' => 'db_name',
@@ -22,8 +22,7 @@ define("__CONFIG__",
 	));
 
 //自定义路由
-define('__ROUTE__',
-	array(
+define('__ROUTE__', array(
 		'/register/' => "/Index/register",
 		'/loginxxx/' => "/Index/login/xxx",
 		'/archive/2/' => "/Archive/list/2",

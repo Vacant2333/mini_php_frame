@@ -6,7 +6,7 @@
 <br>
 代码仅10 KB!
 <br>
-演示地址: <a href="http://miniphp.vacant.mobi">[点我丫]</a>
+演示地址: <a href="http://">[暂时没有]</a>
 <br>
 <h3>文件结构</h3>
 <br>
@@ -39,7 +39,7 @@ index.php                |框架入口
 <br>
 修改config.php中的absolute_address参数
 <br>
-内容为你的入口文件根目录
+内容为 你的入口文件根目录
 <br>
 进入http://localhost
 <br>
@@ -87,4 +87,4 @@ URL结构: xxx.com/控制器/方法/参数1/参数2/参数3/参数+
 
 
 <br><br><br>
-最后更新时间:2020/4/20
+最后更新时间:2021/3/24
