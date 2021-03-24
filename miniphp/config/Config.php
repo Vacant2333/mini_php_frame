@@ -3,7 +3,7 @@
 define("__CONFIG__",
 	array(
 		//index.php的绝对路径
-		'absolute_address' => '/usr/share/nginx/html/',
+		'absolute_address' => __DIR__  . '/',
 
 		//加密Salt
 		'crypt_salt' => "yourCryptSalt",

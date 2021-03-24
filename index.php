@@ -16,7 +16,7 @@ include_once('miniphp/core/Psr4AutoLoad.php');
 include_once('miniphp/utils/Safe.php');
 
 $url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-define('__URL__' , $url);
+define('__URL__', $url);
 
 $route = new \miniphp\Route();
 $psr = new \miniphp\core\Psr4AutoLoad();
@@ -26,7 +26,7 @@ $url = $route->run();
 //处理URL
 $url = explode('/', $url);
 
-//c(Controller)转换为全小写 首字母大写,默认值为index
+//c(Controller)转换为全小写 首字母大写,默认值为Index,a(Action)方法名
 $c = @$url[1] ? ucfirst(strtolower($url[1])) : 'Index';
 $a = @$url[2] ? $url[2] : 'index';
 
@@ -42,6 +42,7 @@ $class = new $controller();
 //判断方法是否存在
 if(method_exists($class, $a))
 {
+	//调用目标方法
 	call_user_func([$class, $a]);
 }
 else
