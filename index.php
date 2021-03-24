@@ -4,16 +4,19 @@ date_default_timezone_set('PRC');
 
 //全局设置
 include_once('miniphp/config/Config.php');
-//Model主类
+//Model基类
 include_once('miniphp/Model.php');
-//控制器主类
+//控制器基类
 include_once('miniphp/Controller.php');
 //自定义路由
 include_once('miniphp/Route.php');
-//自动加载
+//Psr4自动加载
 include_once('miniphp/core/Psr4AutoLoad.php');
 
 include_once('miniphp/utils/Safe.php');
+
+//项目地址
+define('__APP_PATH__', (__DIR__ . '/'));
 
 $url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 define('__URL__', $url);

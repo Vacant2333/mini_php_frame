@@ -14,7 +14,7 @@ class Model
 		$conf = __CONFIG__['db'];
 		$this->table_bname = $conf['name'];
 
-		$sql = mysqli_connect($conf['ip'] , $conf['user'] , $conf['password'] , $conf['name']);
+		$sql = mysqli_connect($conf['ip'], $conf['user'], $conf['password'], $conf['name']);
 
 		if(mysqli_connect_error())
 		{

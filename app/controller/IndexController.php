@@ -28,7 +28,7 @@ class IndexController extends \miniphp\Controller
 		$this->page_include("Index/page/register.php");
 	}
 
-	public function getUserModelConnect()
+	private function getUserModelConnect()
 	{
 		//此函数用于获取User表的数据库类实例
 		//无需 include 直接 new(自动加载会帮你include)

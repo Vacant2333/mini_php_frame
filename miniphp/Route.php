@@ -15,7 +15,7 @@ class Route
 	{
 		if($this->routeConfig || is_array($this->routeConfig))
 		{
-			$url = explode('/' , __URL__);
+			$url = explode('/', __URL__);
 			//把 xxx.com/c/a/ 转换为 /c/a
 			if($url[1] != NULL)
 			{
@@ -37,7 +37,7 @@ class Route
 				//判断访问的URL是否存在路由配置中
 				foreach($this->routeConfig as $left => $right)
 				{
-					if($ru == $left)
+					if($ru === $left)
 					{
 						$url = $url[0] . $right;
 						return $url;

@@ -1,10 +1,6 @@
 <?php
 //框架全局设置
-define("__CONFIG__",
-	array(
-		//index.php的绝对路径
-		'absolute_address' => __DIR__  . '/',
-
+define("__CONFIG__", array(
 		//加密Salt
 		'crypt_salt' => "yourCryptSalt",
 

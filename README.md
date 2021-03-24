@@ -1,23 +1,20 @@
 # Mini_PHP MVC框架
-<br>
-环境: PHP5.6+, Linux_CentOS7, Apache/Nginx
+环境要求: PHP7.2+, Linux, Apache/Nginx
 <br>
 <h2>超级轻的PHP Web框架</h2>
-<br>
 代码仅10 KB!
 <br>
-演示地址: <a href="http://">[暂时没有]</a>
-<br>
+演示地址: <a href="http://39.96.4.47:81/Index/index">[点我]</a>
+
 <h3>文件结构</h3>
-<br>
 <pre>
-app                      |页面内容
+app                      |项目文件
   controller             |控制器
     IndexController.php  |默认控制器
-  model                  |模型
+  model                  |数据库模型
     userModel.php        |默认模型
-  view                   |页面内容
-    page                 |页面文件
+  view                   |页面文件
+    page                 |page页面
       index.php          |index页面内容
     header.php           |index头部内容
     footer.php           |index底部内容
@@ -32,30 +29,40 @@ miniphp                  |框架文件
   Model.php              |模型(父类)
   Route.php              |自定义路由
 index.php                |框架入口
-.htaccess                |URL重写
 </pre>
-<br>
+
 <h3>初次使用</h3>
+下载项目文件,放在网页根目录
 <br>
-修改config.php中的absolute_address参数
+配置重定向(所有不存在的访问重定向到 /index.php)
 <br>
-内容为 你的入口文件根目录
+Nginx配置:
+<pre>
+location /
+{
+    try_files $uri $uri/ /index.php?$query_string;
+}
+</pre>
+Apache请自行设置
 <br>
-进入http://localhost
+访问以下任意地址
 <br>
+http://localhost
+<br>
+http://Index/index
+<br>
+http://register
+
 <h3>自定义路由(ROUTE)</h3>
-路由设置在/miniphp/config/config.php
+路由设置在miniphp/config/Config.php
 <br>
-路由提供了一个示例
+访问 xxx.com/register
 <br>
-直接访问 xxx.com/register
-<br>
-则相当于访问
+相当于访问
 <br>
 xxx.com/Index/register
 <br>
-路由参数须按照示例修改
-<br>
+
 <h3>命名规范</h3>
 MySQL的库/表名需小写或小写加下划线,如:item，car_orders
 <br>
@@ -65,14 +72,15 @@ MySQL的库/表名需小写或小写加下划线,如:item，car_orders
 <br>
 模型名(Model)需用小骆驼峰命名法,首字母小写,userModel(父类用大骆驼峰命名法)
 <br>
-<h3>默认已定义常量</h3>
-<br>
-__URL__(字符串) 用户访问的URL
-<br>
-__ROUTE__(一维数组) 自定义路由配置
-<br>
-__CONFIG__(一维数组) 全局配置
-<br>
+
+<h3>已定义常量</h3>
+<pre>
+__URL__      (string)   用户访问的URL
+__ROUTE__    (array)    自定义路由配置
+__CONFIG__   (array)    全局配置
+__APP_PATH__ (string)   App路径
+</pre>
+
 <h3>其他</h3>
 默认控制器: Index  默认方法: index
 <br>
@@ -83,7 +91,6 @@ __CONFIG__(一维数组) 全局配置
 URL结构: xxx.com/控制器/方法/参数1/参数2/参数3/参数+
 <br>
 获取URL参数: $url[3]为参数1  $url[4]为参数2
-<br>
 <br>
 <br>
 最后更新时间:2021/3/24
