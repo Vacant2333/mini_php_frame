@@ -1,5 +1,5 @@
-# Mini_PHP MVC框架
-环境要求: PHP7.2+, Linux, Apache/Nginx
+# Mini_PHP_Frame MVC框架
+环境要求: PHP7+, Linux, Apache/Nginx
 <br>
 <h2>超级轻的PHP Web框架</h2>
 代码仅10 KB!
@@ -49,11 +49,11 @@ Apache请自行设置
 <br>
 http://localhost
 <br>
-http://Index/index
+http://localhost/Index/index
 <br>
-http://register
+http://localhost/register
 
-<h3>自定义路由(ROUTE)</h3>
+<h3>自定义路由(Route)</h3>
 路由设置在miniphp/config/Config.php
 <br>
 访问 xxx.com/register
