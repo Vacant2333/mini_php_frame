@@ -4,7 +4,7 @@
 <h2>超级轻的PHP Web框架</h2>
 代码仅10 KB!
 <br>
-演示地址: <a href="http://39.96.4.47:81/Index/index">[点我]</a>
+演示地址: <a href="http://mpf.vacant.zone">[点我]</a>
 
 <h3>文件结构</h3>
 <pre>
